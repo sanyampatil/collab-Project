@@ -3,13 +3,13 @@ import React from 'react'
 const Navbar = () => {
   return (
     <>
-      <div className=''>
+      <div className=' bg-slate-200'>
         <div className=' w-[100%]'>
           <nav class='shadow '>
             <div class='flex justify-between items-center py-6 px-10 container mx-auto'>
               <div>
                 <h1 class='text-2xl font-bold bg-gradient-to-tr from-indigo-600 to-green-600 bg-clip-text text-transparent hover:cursor-pointer'>
-                  Adsla
+                  यवतमाळ क्रीडा संकुलन समिति
                 </h1>
               </div>
 
@@ -20,7 +20,7 @@ const Navbar = () => {
                   <spnan class='h-1 rounded-full block w-8 mb-1 bg-gradient-to-tr from-indigo-600 to-green-600'></spnan>
                 </div>
                 <div class='flex items-center'>
-                  <ul class='sm:flex space-x-4 hidden items-center'>
+                  <ul class='sm:flex space-x-4 hidden items-center font-semibold text-lg'>
                     <li>
                       <a
                         href='#'
@@ -68,7 +68,7 @@ const Navbar = () => {
                       LOGIN
                     </h1>
                     <h1 class='text-text-gray-600  py-2 hover:cursor-pointer px-4 rounded text-white bg-gradient-to-tr from-indigo-600 to-green-600 hover:shadow-lg'>
-                      SIGNUP
+                      Register
                     </h1>
                   </div>
                 </div>

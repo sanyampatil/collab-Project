@@ -1,4 +1,5 @@
 import React from 'react'
+import Typewriter from 'typewriter-effect'
 
 const Home = () => {
   return (
@@ -7,14 +8,36 @@ const Home = () => {
         {/* section hero  */}
         <section>
           <div class='bg-gray-100 sm:grid grid-cols-5 grid-rows-2 px-4 py-6 min-h-full lg:min-h-screen space-y-6 sm:space-y-0 sm:gap-4'>
-            <div class='h-96 col-span-4 bg-gradient-to-tr from-indigo-800 to-indigo-500 rounded-md flex items-center'>
+            <div class=' h-52 col-span-4 bg-gradient-to-tr from-indigo-800 to-indigo-500 rounded-md   lg:flex  lg:items-center  sm:flex   lg:justify-between lg:px-5 items-center'>
+              <div className='logo lg:flex lg:items-center lg:gap-2 '>
+                <img
+                  src=''
+                  alt='mainLogo'
+                  className='w-[200px] h-[200px] bg-white rounded-full'
+                />
+                <div>
+                  <h2 class='text-white text-4xl'>
+                    यवतमाळ क्रीडा संकुलन समिति
+                  </h2>
+                  <p class='text-indigo-100 mt-4 capitalize font-thin tracking-wider leading-7'>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Sed, dolore?
+                  </p>
+                </div>
+              </div>
               <div class='ml-20 w-80'>
-                <h2 class='text-white text-4xl'>Adsla</h2>
-                <p class='text-indigo-100 mt-4 capitalize font-thin tracking-wider leading-7'>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed,
-                  dolore?
-                </p>
-
+                {/* <h2 class='text-white text-4xl'>Adsla</h2> */}
+                <div className='text-2xl text-white'>
+                  <Typewriter
+                    options={{
+                      strings: ['swimming ', ' coaching', 'food and fun  '],
+                      autoStart: true,
+                      loop: true,
+                      cursor: '',
+                      wrapperClassName: 'typewriterpara'
+                    }}
+                  />
+                </div>
                 <a
                   href='#'
                   class='uppercase inline-block mt-8 text-sm bg-white py-2 px-4 rounded font-semibold hover:bg-indigo-100'
@@ -65,19 +88,6 @@ const Home = () => {
                   <li class='py-3 border-b-2'>
                     <a href='#' class='list-none  hover:text-indigo-600'>
                       Pricing
-                    </a>
-                  </li>
-                  <li class='py-3 border-b-2'>
-                    <a href='#' class='list-none  hover:text-indigo-600'>
-                      Hire
-                    </a>
-                  </li>
-                  <li class='py-3 '>
-                    <a
-                      href='#'
-                      class='list-none border-b-2 hover:text-indigo-600'
-                    >
-                      Business
                     </a>
                   </li>
                 </div>
