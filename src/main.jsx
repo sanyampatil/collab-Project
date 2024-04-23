@@ -2,9 +2,29 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
+import {
+  Route,
+  Router,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider
+} from 'react-router-dom'
+
+import MainLayout from './layout/MainLayout.jsx'
+import Home from './pages/Home.jsx'
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path='' element={<MainLayout />}>
+      <Route path='/' element={<Home />} />
+    </Route>
+  )
+)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <RouterProvider router={router} />
+
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
 )
