@@ -8,7 +8,7 @@ const Home = () => {
       <main>
         {/* section hero  */}
         <section>
-          <div className='bg-gray-100  border-2 border-black sm:grid grid-cols-5 grid-rows-2 px-4 py-6  space-y-6 sm:space-y-0 sm:gap-4'>
+          <div className=' relative bg-gray-100   sm:grid grid-cols-5 grid-rows-2 px-4 py-6  space-y-6 sm:space-y-0 sm:gap-4'>
             <div className='  h-52 col-span-4 bg-gradient-to-tr from-indigo-800 to-indigo-500 rounded-md  lg:flex     lg:items-center  sm:flex   lg:justify-between lg:px-5 items-center'>
               <div className='logo lg:flex lg:items-center lg:gap-2 '>
                 <img
@@ -91,7 +91,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className='  w-screen'>
+          <div className='  absolute  top-96  w-screen'>
             <HomeCrousal />
           </div>
         </section>
