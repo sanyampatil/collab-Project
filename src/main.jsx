@@ -15,12 +15,14 @@ import {
 import MainLayout from './layout/MainLayout.jsx'
 import Home from './pages/Home.jsx'
 import Register from './pages/Register.jsx'
+import Login from './pages/Login.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='' element={<MainLayout />}>
       <Route path='/' element={<Home />} />
       <Route path='/register' element={<Register />} />
+      <Route path='/login' element={<Login />} />
     </Route>
   )
 )

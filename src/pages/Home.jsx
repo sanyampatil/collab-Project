@@ -18,7 +18,7 @@ const Home = () => {
                 />
                 <div>
                   <h2 className='text-white text-4xl'>
-                    यवतमाळ क्रीडा संकुलन समिति
+                    जिल्हा क्रीडा संकुल समिति
                   </h2>
                   <p className='text-indigo-100 mt-4 capitalize font-thin tracking-wider leading-7'>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
