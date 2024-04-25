@@ -16,6 +16,7 @@ import MainLayout from './layout/MainLayout.jsx'
 import Home from './pages/Home.jsx'
 import Register from './pages/Register.jsx'
 import Login from './pages/Login.jsx'
+import ProcessStepper from './pages/ProcessStepper.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
       <Route path='/' element={<Home />} />
       <Route path='/register' element={<Register />} />
       <Route path='/login' element={<Login />} />
+      <Route path='/process' element={<ProcessStepper />} />
     </Route>
   )
 )
