@@ -1,90 +1,115 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import * as React from 'react'
+import PropTypes from 'prop-types'
+import AppBar from '@mui/material/AppBar'
+import Box from '@mui/material/Box'
+import CssBaseline from '@mui/material/CssBaseline'
+import Divider from '@mui/material/Divider'
+import Drawer from '@mui/material/Drawer'
+import IconButton from '@mui/material/IconButton'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemButton from '@mui/material/ListItemButton'
+import ListItemText from '@mui/material/ListItemText'
+import MenuIcon from '@mui/icons-material/Menu'
+import Toolbar from '@mui/material/Toolbar'
+import Typography from '@mui/material/Typography'
+import Button from '@mui/material/Button'
 
-const Navbar = () => {
-  return (
-    <>
-      <div className=' bg-slate-200'>
-        <div className=' w-[100%]'>
-          <nav className='shadow '>
-            <div className='flex justify-between items-center py-6 px-10 container mx-auto'>
-              <div>
-                <h1 className='text-2xl font-bold bg-gradient-to-tr from-indigo-600 to-green-600 bg-clip-text text-transparent hover:cursor-pointer'>
-                  जिल्हा क्रीडा संकुल समिति
-                </h1>
-              </div>
+const drawerWidth = 240
+const navItems = ['Home', 'About', 'Contact', 'services']
 
-              <div>
-                <div className='hover:cursor-pointer sm:hidden'>
-                  <span className='h-1 rounded-full block w-8 mb-1 bg-gradient-to-tr from-indigo-600 to-green-600'></span>
-                  <span className='h-1 rounded-full block w-8 mb-1 bg-gradient-to-tr from-indigo-600 to-green-600'></span>
-                  <span className='h-1 rounded-full block w-8 mb-1 bg-gradient-to-tr from-indigo-600 to-green-600'></span>
-                </div>
-                <div className='flex items-center'>
-                  <ul className='sm:flex space-x-4 hidden items-center font-semibold text-lg'>
-                    <li>
-                      <Link
-                        to='/'
-                        className='text-gray-700 hover:text-indigo-600 text-md '
-                      >
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to='/about'
-                        className='text-gray-700 hover:text-indigo-600 text-md '
-                      >
-                        About
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to='/services'
-                        className='text-gray-700 hover:text-indigo-600 text-md '
-                      >
-                        Services
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to='/product'
-                        className='text-gray-700 hover:text-indigo-600 text-md '
-                      >
-                        Products
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to='/contact'
-                        className='text-gray-700 hover:text-indigo-600 text-md '
-                      >
-                        Contact
-                      </Link>
-                    </li>
-                  </ul>
+function Navbar (props) {
+  const { window } = props
+  const [mobileOpen, setMobileOpen] = React.useState(false)
 
-                  <div className='md:flex items-center hidden space-x-4 ml-8 lg:ml-12'>
-                    <Link
-                      to='/login'
-                      className='text-text-gray-600  py-2 hover:cursor-pointer hover:text-indigo-600'
-                    >
-                      LOGIN
-                    </Link>
-                    <Link to='/register'>
-                      <h1 className='text-text-gray-600  py-2 hover:cursor-pointer px-4 rounded text-white bg-gradient-to-tr from-indigo-600 to-green-600 hover:shadow-lg'>
-                        Register
-                      </h1>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </div>
-    </>
+  const handleDrawerToggle = () => {
+    setMobileOpen(prevState => !prevState)
+  }
+
+  const drawer = (
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+      <Typography variant='h6' sx={{ my: 2 }}>
+        जिल्हा क्रीडा संकुल समिति
+      </Typography>
+      <Divider />
+      <List>
+        {navItems.map(item => (
+          <ListItem key={item} disablePadding>
+            <ListItemButton sx={{ textAlign: 'center' }}>
+              <ListItemText primary={item} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
   )
+
+  const container =
+    window !== undefined ? () => window().document.body : undefined
+
+  return (
+    <div className=''>
+      <Box sx={{ display: 'flex' }}>
+        <CssBaseline />
+        <nav>
+          <Drawer
+            container={container}
+            variant='temporary'
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            ModalProps={{
+              keepMounted: true // Better open performance on mobile.
+            }}
+            sx={{
+              display: { xs: 'block', sm: 'none' },
+              '& .MuiDrawer-paper': {
+                boxSizing: 'border-box',
+                width: drawerWidth
+              }
+            }}
+          >
+            {drawer}
+          </Drawer>
+        </nav>
+
+        <AppBar component='nav'>
+          <Toolbar>
+            <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
+              जिल्हा क्रीडा संकुल समिति
+            </Typography>
+            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+              {navItems.map(item => (
+                <Button key={item} sx={{ color: '#fff' }}>
+                  {item}
+                </Button>
+              ))}
+            </Box>
+
+            <IconButton
+              color='inherit'
+              aria-label='open drawer'
+              edge='end'
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2, display: { sm: 'none' } }}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Toolbar>
+        </AppBar>
+        {/* <Box component='main' sx={{ p: 3 }}>
+          <Toolbar />
+        </Box> */}
+      </Box>
+    </div>
+  )
+}
+
+Navbar.propTypes = {
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
+  window: PropTypes.func
 }
 
 export default Navbar
