@@ -82,7 +82,7 @@ const Register = () => {
 
   return (
     <>
-      <section className='authPage h-[100vh] w-[100vw] bg-blue-200'>
+      <section className='authPage h-[100vh] w-[100vw] mt-5 bg-blue-200'>
         <div className='container lg:flex lg:items-center  w-full  '>
           <div className='header'>
             <h3 className='   font-semibold'>Create a new account</h3>

@@ -64,7 +64,7 @@
 .authPage .container form .inputTag div svg {
   width: 10%;
   font-size: 1.5rem;
-  background: rgb(70, 22, 116);
+  background: blue;
   height: 100%;
   padding: 8px;
   color: #fff;
@@ -77,17 +77,17 @@
   margin-top: 25px;
   font-weight: 700;
   color: #fff;
-  background: blueviolet;
+  background: blue;
   font-size: 1.2rem;
   border-radius: 7px;
 }
 .authPage .container form a {
   padding: 12px;
   text-align: center;
-  border: 1px solid blueviolet;
+  border: 1px solid blue;
   margin-top: 25px;
   font-weight: 700;
-  color: blueviolet;
+  color: blue;
   font-size: 1.2rem;
   text-decoration: none;
   border-radius: 7px;

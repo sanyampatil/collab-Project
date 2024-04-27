@@ -14,11 +14,31 @@ import MenuIcon from '@mui/icons-material/Menu'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
+import { Link, useNavigate } from 'react-router-dom'
 
 const drawerWidth = 240
-const navItems = ['Home', 'About', 'Contact', 'services']
+const navItems = [
+  {
+    name: 'Home',
+    slug: '/'
+  },
+  {
+    name: 'about',
+    slug: '/about'
+  },
+  {
+    name: 'services',
+    slug: '/services'
+  },
+  {
+    name: 'contact',
+    slug: '/contact'
+  }
+]
 
 function Navbar (props) {
+  const navigate = useNavigate()
+
   const { window } = props
   const [mobileOpen, setMobileOpen] = React.useState(false)
 
@@ -35,8 +55,11 @@ function Navbar (props) {
       <List>
         {navItems.map(item => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+            <ListItemButton
+              sx={{ textAlign: 'center' }}
+              onClick={() => navigate(item.slug)}
+            >
+              <ListItemText primary={item.name} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -79,12 +102,20 @@ function Navbar (props) {
             </Typography>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
               {navItems.map(item => (
-                <Button key={item} sx={{ color: '#fff' }}>
-                  {item}
+                <Button
+                  key={item}
+                  sx={{ color: '#fff' }}
+                  onClick={() => navigate(item.slug)}
+                >
+                  {item.name}
                 </Button>
               ))}
             </Box>
-
+            <Link to='/register'>
+              <a className='uppercase text-black i nline-block  text-sm bg-white py-2 px-4 rounded font-semibold hover:bg-indigo-100'>
+                get start
+              </a>
+            </Link>
             <IconButton
               color='inherit'
               aria-label='open drawer'

@@ -25,37 +25,32 @@ const Register = () => {
   }
 
   async function AccountLogin (event) {
-    event.preventDefault()
-    if (!loginData.email || !loginData.password) {
-      toast.error('All required')
-      return
-    }
-
-    if (!isEmail(loginData.email)) {
-      toast.error('Invalid email id')
-      return
-    }
-    if (!isValidPassword(loginData.password)) {
-      toast.error(
-        'Password should be 6 - 16 character long with atleast a number and special character'
-      )
-      return
-    }
-
-    const formData = new FormData()
-    formData.append('email', loginData.email)
-    formData.append('password', loginData.password)
-
-    const response = await dispatch(loginAdminAccount(formData))
-
-    if (response?.payload?.success) {
-      console.log(response)
-    }
-
-    setloginData({
-      email: '',
-      password: ''
-    })
+    //   event.preventDefault()
+    //   if (!loginData.email || !loginData.password) {
+    //     toast.error('All required')
+    //     return
+    //   }
+    //   if (!isEmail(loginData.email)) {
+    //   toast.error('Invalid email id')
+    //   return
+    // }
+    // if (!isValidPassword(loginData.password)) {
+    //   toast.error(
+    //     'Password should be 6 - 16 character long with atleast a number and special character'
+    //   )
+    //   return
+    // }
+    // const formData = new FormData()
+    // formData.append('email', loginData.email)
+    // formData.append('password', loginData.password)
+    // const response = await dispatch(loginAdminAccount(formData))
+    // if (response?.payload?.success) {
+    //   console.log(response)
+    // }
+    // setloginData({
+    //   email: '',
+    //   password: ''
+    // })
   }
 
   return (
@@ -97,7 +92,7 @@ const Register = () => {
               </div>
             </div>
             <button type='submit'>Login</button>
-            <Link to={'/login'}>Register</Link>
+            <Link to={'/register'}>Register</Link>
           </form>
         </div>
       </section>
