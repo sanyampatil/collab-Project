@@ -6,7 +6,7 @@ import LinaerStepper from './LinaerStepper'
 
 const Step = () => {
   return (
-    <div>
+    <div className='mt-10'>
       <CssBaseline />
       <Container component={Box} p={4}>
         <Paper component={Box} p={3}>
